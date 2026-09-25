@@ -1,0 +1,667 @@
+.membership-plans-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 34px 38px 50px;
+  box-sizing: border-box;
+}
+
+.plans-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.page-label {
+  margin: 0 0 7px;
+  color: #ff634f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.plans-header h1 {
+  margin: 0;
+  color: #f5f7fb;
+  font-size: 34px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.page-description {
+  margin: 8px 0 0;
+  color: #747d91;
+  font-size: 14px;
+}
+
+.add-plan-button {
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #ff634f,
+    #ff315d
+  );
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(255, 70, 80, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-plan-button span {
+  font-size: 20px;
+}
+
+.add-plan-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(255, 70, 80, 0.28);
+}
+
+.plans-card {
+  width: 100%;
+  overflow: hidden;
+
+  background: #10131a;
+  border: 1px solid #202531;
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.16);
+}
+
+.plans-toolbar {
+  min-height: 84px;
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #202531;
+}
+
+.plans-toolbar h2 {
+  margin: 0 0 5px;
+  color: #f3f5f8;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.plans-toolbar span {
+  color: #697286;
+  font-size: 12px;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+  padding: 24px;
+}
+
+.plan-card {
+  position: relative;
+
+  display: flex;
+  gap: 16px;
+
+  padding: 22px;
+
+  border: 1px solid #292f3b;
+  border-radius: 15px;
+
+  background: #141820;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #3a414f;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.2);
+}
+
+.plan-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: #ff7664;
+  background: rgba(255, 99, 79, 0.09);
+
+  font-size: 21px;
+}
+
+.plan-content {
+  min-width: 0;
+}
+
+.plan-content h3 {
+  margin: 2px 0 5px;
+
+  color: #eef1f5;
+  font-size: 16px;
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-content p {
+  margin: 0;
+
+  color: #687286;
+  font-size: 12px;
+}
+
+.plan-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 17px;
+}
+
+.plan-details span {
+  color: #9aa3b2;
+  font-size: 11px;
+}
+
+.plan-details strong {
+  color: #ff7664;
+  font-size: 15px;
+}
+
+.plans-loading {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #697286;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+
+  margin-bottom: 15px;
+
+  border: 3px solid #252b36;
+  border-top-color: #ff5b50;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+.plans-loading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.plans-empty {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 30px;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 17px;
+
+  color: #66748d;
+  background: #171c25;
+
+  font-size: 25px;
+}
+
+.plans-empty h3 {
+  margin: 0 0 7px;
+
+  color: #e7eaf0;
+  font-size: 16px;
+}
+
+.plans-empty p {
+  margin: 0 0 20px;
+
+  color: #687286;
+  font-size: 13px;
+}
+
+.empty-add-button {
+  padding: 10px 16px;
+
+  border: 1px solid #343a47;
+  border-radius: 9px;
+
+  color: #ff7966;
+  background: #151922;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.empty-add-button:hover {
+  border-color: #ff5d50;
+  background: rgba(255, 93, 80, 0.07);
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .membership-plans-page {
+    padding: 28px 24px 40px;
+  }
+
+  .plans-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .membership-plans-page {
+    padding: 22px 16px 35px;
+  }
+
+  .plans-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .plans-header h1 {
+    font-size: 27px;
+  }
+
+  .add-plan-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .plans-toolbar {
+    padding: 18px;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .plans-card {
+    border-radius: 14px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 400px) {
+  .membership-plans-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .plans-header h1 {
+    font-size: 24px;
+  }
+}
+/* Add Plan Modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(7px);
+
+  z-index: 1000;
+}
+
+.plan-modal {
+  width: 100%;
+  max-width: 620px;
+
+  background: #10131a;
+
+  border: 1px solid #292f3b;
+  border-radius: 18px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 26px 28px;
+
+  border-bottom: 1px solid #202531;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  color: #f2f4f8;
+  font-size: 24px;
+}
+
+.modal-close {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #303744;
+  border-radius: 10px;
+
+  color: #8d96a7;
+  background: #171c25;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: white;
+  border-color: #ff5d50;
+}
+
+.plan-modal form {
+  padding: 26px 28px 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #aeb6c5;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #2b323f;
+  border-radius: 10px;
+
+  outline: none;
+
+  color: #edf0f5;
+  background: #0c0f14;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.form-group input {
+  height: 48px;
+  padding: 0 14px;
+}
+
+.form-group textarea {
+  padding: 13px 14px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #596375;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff5d50;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 93, 80, 0.08);
+}
+
+.modal-error {
+  margin-bottom: 18px;
+  padding: 11px 13px;
+
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  border-radius: 9px;
+
+  color: #ff8b82;
+  background: rgba(255, 60, 60, 0.08);
+
+  font-size: 13px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  padding-top: 5px;
+}
+
+.cancel-button,
+.save-plan-button {
+  height: 45px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid #303744;
+
+  color: #a6afbf;
+  background: #171c25;
+}
+
+.cancel-button:hover {
+  color: white;
+  border-color: #444c5a;
+}
+
+.save-plan-button {
+  border: 0;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #ff634f,
+    #ff315d
+  );
+
+  box-shadow:
+    0 8px 20px rgba(255, 70, 80, 0.2);
+}
+
+.save-plan-button:hover {
+  transform: translateY(-1px);
+}
+
+.save-plan-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Mobile Modal */
+
+@media (max-width: 600px) {
+  .plan-modal {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 22px;
+  }
+
+  .plan-modal form {
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-button,
+  .save-plan-button {
+    width: 100%;
+  }
+}
+.plan-card {
+  position: relative;
+  padding-right: 100px;
+}
+
+.plan-actions {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  display: flex;
+  gap: 7px;
+}
+
+.edit-plan-button,
+.delete-plan-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #303744;
+  border-radius: 8px;
+
+  background: #171c25;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.edit-plan-button:hover {
+  border-color: #4d82ff;
+  background: rgba(77, 130, 255, 0.1);
+}
+
+.delete-plan-button:hover {
+  border-color: #ff4f5e;
+  background: rgba(255, 79, 94, 0.1);
+}
+
+@media (max-width: 650px) {
+  .plan-card {
+    padding-right: 22px;
+    padding-top: 68px;
+  }
+
+  .plan-actions {
+    top: 18px;
+    left: 22px;
+    right: auto;
+  }
+}

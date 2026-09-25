@@ -1,0 +1,993 @@
+/* ================================
+   PORTFOLIO BASE
+================================ */
+
+.portfolio-page {
+  min-height: 100vh;
+  background: #080808;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.portfolio-page * {
+  box-sizing: border-box;
+}
+
+.portfolio-page button {
+  font: inherit;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.portfolio-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #080808;
+}
+
+.portfolio-hero-bg {
+  position: absolute;
+  inset: -8%;
+  background:
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(255, 255, 255, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      115deg,
+      #080808 0%,
+      #111111 55%,
+      #050505 100%
+    );
+  will-change: transform;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.98) 0%,
+      rgba(8, 8, 8, 0.78) 40%,
+      rgba(8, 8, 8, 0.32) 72%,
+      rgba(8, 8, 8, 0.92) 100%
+    );
+}
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1400px, 92%);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-copy {
+  padding-top: 30px;
+  animation: heroCopyIn 1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 25px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  opacity: 0.6;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  max-width: 800px;
+  font-size: clamp(55px, 7vw, 105px);
+  line-height: 0.94;
+  letter-spacing: -5px;
+  font-weight: 800;
+}
+
+.hero-copy h1 span {
+  opacity: 0.35;
+}
+
+.hero-copy > p {
+  max-width: 540px;
+  margin: 35px 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-actions button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 15px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-actions button:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-actions button span {
+  margin-left: 12px;
+}
+
+.hero-actions .hero-back-button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ================================
+   HERO PHOTO
+================================ */
+
+.portfolio-photo-wrapper {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.portfolio-hero-photo {
+  position: relative;
+  z-index: 3;
+  height: 90%;
+  display: flex;
+  align-items: flex-end;
+  will-change: transform;
+  animation: photoIn 1.3s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.portfolio-hero-photo img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter:
+    drop-shadow(
+      0 30px 70px rgba(0, 0, 0, 0.65)
+    );
+}
+
+.photo-glow {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  filter: blur(90px);
+  right: 15%;
+  top: 25%;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+.photo-caption {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 14%;
+  padding: 16px 20px;
+  border-left: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(12px);
+}
+
+.photo-caption span,
+.photo-caption strong {
+  display: block;
+}
+
+.photo-caption span {
+  font-size: 9px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+}
+
+.photo-caption strong {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+/* ================================
+   SCROLL INDICATOR
+================================ */
+
+.hero-scroll-indicator {
+  position: absolute;
+  z-index: 5;
+  bottom: 30px;
+  left: 4%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.5;
+}
+
+.hero-scroll-indicator span {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.scroll-line {
+  width: 70px;
+  height: 1px;
+  background: rgba(255,255,255,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 1px;
+  background: #ffffff;
+  left: -25px;
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ================================
+   COMMON SECTIONS
+================================ */
+
+.portfolio-section {
+  position: relative;
+  width: min(1200px, 90%);
+  margin: auto;
+  padding: 160px 0;
+}
+
+.section-number {
+  position: absolute;
+  left: 0;
+  top: 165px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: 0.3;
+}
+
+.section-heading {
+  padding-left: 90px;
+}
+
+.section-heading > span {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.45;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(45px, 6vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+}
+
+.section-heading h2 em {
+  font-style: normal;
+  opacity: 0.35;
+}
+
+/* ================================
+   ABOUT — CENTER ALIGNMENT
+================================ */
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  text-align: center;
+}
+
+.about-section .section-heading {
+  width: 100%;
+  padding-left: 0;
+  text-align: center;
+}
+
+.about-content {
+  width: min(700px, 100%);
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.about-content .about-large {
+  color: rgba(255,255,255,0.9);
+  font-size: 25px;
+  line-height: 1.55;
+}
+
+/* ================================
+   EXPERIENCE
+================================ */
+
+.experience-section {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.experience-grid {
+  margin-top: 90px;
+  padding-left: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.experience-card {
+  min-height: 280px;
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.025);
+  transition:
+    transform 0.45s ease,
+    background 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.experience-card strong {
+  display: block;
+  font-size: 65px;
+  letter-spacing: -4px;
+}
+
+.experience-card span {
+  display: block;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.experience-card p {
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+
+/* ================================
+   CERTIFICATIONS
+================================ */
+
+.certification-section {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.certification-list {
+  margin-top: 90px;
+  padding-left: 90px;
+}
+
+.certification-item {
+  min-height: 120px;
+  display: grid;
+  grid-template-columns: 70px 1fr 50px;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  transition: padding 0.4s ease;
+}
+
+.certification-item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.certification-item:hover {
+  padding-left: 15px;
+}
+
+.certification-item > span {
+  opacity: 0.3;
+  font-size: 11px;
+}
+
+.certification-item h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.certification-item p {
+  margin: 8px 0 0;
+  color: rgba(255,255,255,0.42);
+}
+
+.certification-item b {
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+/* ================================
+   PHILOSOPHY
+================================ */
+
+.portfolio-philosophy {
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.08),
+      transparent 40%
+    ),
+    #050505;
+}
+
+.philosophy-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.025),
+      transparent
+    );
+}
+
+.philosophy-content {
+  position: relative;
+  width: min(850px, 90%);
+  text-align: center;
+}
+
+.philosophy-content > span {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.4;
+}
+
+.philosophy-content h2 {
+  margin: 30px 0;
+  font-size: clamp(50px, 7vw, 100px);
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.philosophy-content h2 em {
+  font-style: normal;
+  opacity: 0.35;
+}
+
+.philosophy-content p {
+  max-width: 550px;
+  margin: auto;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+
+/* ================================
+   CONTACT — CENTER ALIGNMENT
+================================ */
+
+.portfolio-contact {
+  position: relative;
+  padding: 150px 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,0.055),
+      transparent 38%
+    ),
+    #070707;
+}
+
+.contact-content {
+  width: min(760px, 92%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-content > span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.4;
+}
+
+.contact-content h2 {
+  margin: 25px 0 0;
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.92;
+  letter-spacing: -5px;
+}
+
+.contact-content h2 em {
+  font-style: normal;
+  opacity: 0.3;
+}
+
+.contact-content > p {
+  max-width: 520px;
+  margin: 30px auto 0;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ================================
+   CONTACT LINKS
+================================ */
+
+.contact-links {
+  width: 100%;
+  max-width: 620px;
+  margin: 45px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-link {
+  width: 100%;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.035);
+  color: #ffffff;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.065);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.28);
+}
+
+.contact-link-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.07);
+}
+
+.contact-link-icon svg {
+  width: 27px;
+  height: 27px;
+  display: block;
+}
+
+.instagram-icon {
+  color: #ff7ac8;
+}
+
+.phone-icon {
+  color: #8ea2ff;
+}
+
+.contact-link-content {
+  min-width: 0;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link-content span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.45);
+}
+
+.contact-link-content strong {
+  display: block;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.contact-link-arrow {
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.65);
+  font-size: 19px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.contact-link:hover .contact-link-arrow {
+  transform: translate(3px, -3px);
+  color: #ffffff;
+}
+
+/* ================================
+   FINAL
+================================ */
+
+.portfolio-final {
+  min-height: 90vh;
+  padding: 150px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.portfolio-final > span {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.4;
+}
+
+.portfolio-final h2 {
+  margin: 30px 0;
+  font-size: clamp(65px, 9vw, 125px);
+  line-height: 0.85;
+  letter-spacing: -6px;
+}
+
+.portfolio-final h2 em {
+  font-style: normal;
+  opacity: 0.3;
+}
+
+.portfolio-final p {
+  max-width: 450px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+
+.portfolio-final button {
+  margin-top: 35px;
+  padding: 16px 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #080808;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-final button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 45px rgba(255,255,255,0.12);
+}
+
+.portfolio-final button span {
+  margin-left: 12px;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes heroCopyIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 35px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes photoIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 70px, 0) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+  .portfolio-hero-content {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+
+  .hero-copy {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-copy h1 {
+    letter-spacing: -3px;
+  }
+
+  .hero-copy > p {
+    font-size: 15px;
+  }
+
+  .portfolio-photo-wrapper {
+    position: absolute;
+    inset: auto 0 0;
+    height: 58vh;
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .photo-caption {
+    display: none;
+  }
+
+  .hero-bg-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8,8,8,0.88),
+        rgba(8,8,8,0.45),
+        rgba(8,8,8,0.98)
+      );
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  }
+
+  .about-section .section-heading,
+  .about-section .about-content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .section-heading,
+  .experience-grid,
+  .certification-list {
+    padding-left: 55px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-number {
+    left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .portfolio-section {
+    width: 88%;
+    padding: 100px 0;
+  }
+
+  .section-number {
+    top: 105px;
+    font-size: 9px;
+  }
+
+  .section-heading,
+  .experience-grid,
+  .certification-list {
+    padding-left: 35px;
+  }
+
+  .about-section .section-heading,
+  .about-section .about-content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -3px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(48px, 15vw, 75px);
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .experience-card {
+    min-height: auto;
+  }
+
+  .certification-item {
+    grid-template-columns: 35px 1fr;
+    padding: 25px 0;
+  }
+
+  .certification-item b {
+    display: none;
+  }
+
+  .portfolio-contact {
+    padding: 110px 20px;
+  }
+
+  .contact-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-content h2 {
+    letter-spacing: -3px;
+    width: 100%;
+  }
+
+  .contact-content > p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-links {
+    width: 100%;
+    margin-top: 32px;
+    gap: 13px;
+  }
+
+  .contact-link {
+    min-height: 76px;
+    padding: 13px 15px;
+    border-radius: 12px;
+  }
+
+  .contact-link-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 11px;
+  }
+
+  .contact-link-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contact-link-content {
+    margin-left: 13px;
+  }
+
+  .contact-link-content span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+
+  .contact-link-content strong {
+    font-size: 13px;
+  }
+
+  .contact-link-arrow {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    font-size: 17px;
+  }
+
+  .portfolio-final h2 {
+    letter-spacing: -4px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
